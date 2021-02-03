@@ -1,0 +1,385 @@
+<!-- Created by Esteban Araujo-Fervenza - x20170416
+                Jose Carlos Kuzolitz Garcia - x20164840
+                Samsom	Mihreteab - x  -->
+
+<!-- Indicates this is HTML5-->
+<!DOCTYPE html>
+
+<!-- Defines Language-->
+<html lang="en">
+
+    <head>
+        <!--Defines the char format-->
+        <meta charset="utf-8">
+
+        <!--Tab Title and icon-->
+        <title>Ludlow Homecare</title>
+        <link rel="icon" type="image/png" href="img/LudlowHCfavicon.jpg">
+        
+        <!-- Search Engine Optimisation -->
+		<meta name="description" content="This is a College Project. It's not the official website. You can access the official website on https://ludlowhomecare.co.uk/">
+		<meta name="author" content="This is a College Project. It's not the official website. You can access the official website on https://ludlowhomecare.co.uk/">
+
+        <!--Allow ViewPort Visualization, the scale of the website when it load up-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- enable page to be displayed in legacy browsers-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--Google API JQuery link-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!--JQuery CDN Ajax by Microsoft (https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview#jQuery_Releases_on_the_CDN_0) -->
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
+
+        <!-- Font Awesome Library --> 
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Bootstrap link, script and stylesheet-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        
+        <!-- Css file link -->
+        <link rel="stylesheet" href="groupCss.css">
+        <link rel="stylesheet" href="MobileView.css">
+
+        <!-- JavaScript-->
+        <script src="./Ludlow_JS.js"></script>
+        
+
+    </head>
+
+    <!-- Body of the Website structure -->
+    <body>
+	
+		<!-- Menu: Adapted  from a youtube tutorial: https://www.youtube.com/watch?v=UHSeFxZIuv8&t=981s -->
+        <nav class="navBar">
+
+			<!-- Logo (Top Left)-->
+            <div class="content">
+                <div class="logo"><a href="./index.html"><img src="img/logo.png" alt="logo"></a></div>
+				
+						<!-- Search Bar setup -->
+						<div class="search">
+						<!-- Search bar is place into a form in order to process data and it is easier when styling -->
+						<form  action="/action_page.php">
+						<!-- Search Bar Input -->
+						<input type="text" placeholder="Search..." name="search">
+						<!-- Search Bar Button -->
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+
+
+				<!-- 3 Lines Button (It shows up just on Mobile View) -->
+				<div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+			
+                <div class= "menu-list" id="menu-list">
+				   
+					<!-- "x" Button (It shows up just on Mobile View) -->
+					<div class="icon off-btn"> 
+						<!--"X" icon (Font Awesome Library) --> 
+                        <i class="fas fa-times"></i>
+					</div>
+					
+					<!-- Menu Buttons -->
+                    <div class="menu-options">
+                        <a href="./index.html">Home</a>
+                        <p></p>
+                        <a href="./product.html">Products</a>
+						<p></p>
+						<!-- Trolly icon (Font Awesome Library) -->
+                        <a class="cart" href="./ShoppingCart.html">Shopping Cart <i class="fa fa-shopping-cart"></i><span>0</span></a>
+                        <p></p>
+                        <a href="./FAQ.html">FAQ</a>
+                        <p></p>
+                        <a href="./Contact.html">Contact</a>
+                    </div>	
+				</div>
+           
+			</div>
+        </nav>
+
+        <!--Checkout starts-->
+        <div id="plainHeader">
+
+            <section class="checkout-row">
+
+                    <!--personal information-->
+                    <form class="personalDetail" id="send-message">
+                        <div class="Checkout-container">
+
+                            <div class="checkout-detail">
+                                
+                                    <div class="detail bailing-Addres">
+                                        
+                                        <h3 class="BillTitle">Billing Address</h3>
+                                        <label class="billLabel" ><i class="fa fa-user"></i>Full Name</label>
+                                        <input class="billInputFields" type="text" name="billName" placeholder="John M. Doe">
+                                        
+                                        <label class="billLabel" for="email"><i class="fa fa-envelope"></i>Email</label>
+                                        <input class="billInputFields" type="text" name="billEmail" placeholder="john@example.com">
+                                        
+                                        <label class="billLabel" for="adr"><i class="fa fa-address-card-o"></i>Address</label>
+                                        <input class="billInputFields" type="text" name="billAdress" placeholder="542 W. 15th Street">
+                                        
+                                        <label class="billLabel" for="city"><i class="fa fa-institution"></i>City</label>
+                                        <input class="billInputFields" type="text" name="billCity" placeholder="Dublin">
+                                        
+                                        <label class="billLabel NoIcon" for="County">County</label>
+                                        <input class="NoIconInput" type="text" name="billCounty" placeholder="Dublin County">
+                                        
+                                        <br/>
+                                        <label class="billLabel NoIcon" for="zip">Post Code</label>
+                                        
+                                        <input class="NoIconInput" type="text" name="billPostCode" placeholder="D07 NTN2">
+                                        <label class="billLabel NoIcon"><input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing</label>
+                                        
+                                    </div>
+                                    <div class="detail payment">
+                                        <h3 class="BillTitle">Payment</h3>
+                                        <label id="AcceptCard" for="fname">Accepted Cards</label>
+                                        <div class="icon-container">
+                                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                        
+                                            
+
+                                            <!--  PAYPAL BUTTON from paypal.com-->
+                                            <div id="smart-button-container">
+                                                <div style="text-align: center;">
+                                                    <div style="margin-bottom: 1.5rem;">
+                                                    
+                                                    <select style="visibility: hidden" id="quantitySelect">test</select>
+                                                    </div>
+                                                <div id="paypal-button-container"></div>
+                                                </div>
+                                            </div>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=GBP" data-sdk-integration-source="button-factory"></script>
+                                            
+                                        
+                                        </div>
+                                        <label class="billLabel NoIcon" for="cname">Card Holder's Name</label>
+                                        <input class="NoIconInput" type="text" name="cardName" placeholder="John More Doe">
+                                        <label class="billLabel NoIcon" for="ccnum">Credit card number</label>
+                                        <input class="NoIconInput" type="text" name="cardNumber" placeholder="1111-2222-3333-4444">
+                                        <label class="billLabel NoIcon" for="expmonth">Exp Month</label>
+                                        <input class="NoIconInput" type="text" name="expMonth" placeholder="September">
+                                        <div class="cardDate">
+                                            <div class="detail cardDate">
+                                                <label class="billLabel NoIcon" for="expyear">Exp Year</label>
+                                                <input class="NoIconInput" type="text" name="expYear" placeholder="2021">
+                                            </div>
+                                            <div class="detail cardNumber">
+                                                <label class="billLabel NoIcon" for="cvv">CVV</label>
+                                                <input class="NoIconInput" type="text" name="cvv" placeholder="352">
+                                            </div>
+                                            
+                                        </div>   
+                                    </div>  
+                            </div>   
+                        </div>
+                        <input type="submit" value="Continue to checkout" class="checkout-btn">
+                    </form>
+                   
+                    <div class="cart-holder">
+                        <div class="cart-header">
+                            <h5 class="checkout-title">PRODUCT</h5>
+                            <h5 class="checkout-price">PRICE</h5>
+                            <h5 class="checkout-quantity">QUANTITY</h5>
+                            <h5 class="checkout-total">TOTAL</h5>
+                        </div>
+                        <!-- DIV Proctds Add the Items in the List-->
+                        
+                        <div class="products">
+                            
+                       
+                        </div>
+                        <div class="clearBtn">
+                            <a onclick="clearLoStorage()" href="./ShoppingCart.html"><i class="fa fa-times-circle" aria-hidden="true"><span id="danger-btn">&#160;Click here to remove all items.<span></span></i>
+                        </div>
+                    </div>
+                    
+            </section>
+        </div>
+
+
+<!--------------------------------------------------------------------------------------------
+--------------------------------------------- Footer -----------------------------------------
+---------------------------------------------------------------------------------------------->
+		
+        <div class="section-bottom-links">   
+            <div class="section-sub-bottom-links">
+                <div class="sub-section-bottom-links">
+                    <div class="sub-bottom-links-title">
+                            <!-- Contact Us Title -->
+                            <p>
+                                <span>Contact Us</span>
+                            </p>
+                            <!-- Contact Us Link (Placed into an Unorderd List) -->
+                            <ul>
+                                <li><a class = "find-us" href="./Contact.html">Find us here</a></li>
+                                <li><p id="storeaddress">Ludford Bridge Ind Est, Temeside, Ludlow SY8 1PE, UK</p></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-sub-bottom-links">
+                <div class="sub-section-bottom-links">
+                    <div class="sub-bottom-links-title">
+                        <!-- Social Media Title -->
+                        <p>
+                            <span>Social Media</span>
+                        </p>
+                        <!-- Social Medias Links (Placed into an Unorderd List) -->
+                        <ul>
+                            <li><a href="https://www.facebook.com/LHomecareLtd/" class="fa fa-facebook"></a></li>
+                            <li><a href="https://www.linkedin.com/company/ludlow-homecare-limited/about/" class="fa fa-linkedin"></a></li>
+                            <li><a href="https://twitter.com/LudlowHomecare" class="fa fa-twitter"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-sub-bottom-links">
+                <div class="sub-section-bottom-links">
+                    <div class="sub-bottom-links-title">
+                        <!-- Our Blogs Title -->
+                        <p>
+                            <span>Our Blogs</span>
+                        </p>
+                        <!-- Our Blogs Links (Placed into an Unorderd List) -->
+                        <ul>
+                            <li><a class="blog blog-tips" href="#">Tips & Advice</a></li>
+                            <li><a class="blog blog-insp" href="#">Inspiration</a></li>
+                            <li><a class="blog blog-calc" href="#">Calculators</a></li>
+                            <li><a class="blog blog-shopB" href="#">Shop Brands</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <footer class="footer">
+            <!-- Copyright and W3C validation -->
+            <!--W3 Validator gave us this badge when it found no errors in our CSS code for this page-->
+            <p>Copyright &copy; Ludlow Homecare &nbsp; <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss"
+                            alt="Valid CSS!" />
+                    </a>
+            </p>
+        </footer>
+
+<!--------------------------------------------------------------------------------------------------
+---------------------------------------- Top NavBar Menu Script ------------------------------------
+--Script needs to be here to avoid null error. Code  from tutorial: https://youtu.be/UHSeFxZIuv8.--- 
+----------------------------- It cannot be called before the object is loaded ----------------------
+--------------------------------------------------------------------------------------------------->
+
+        <script>	
+            const navBar = document.querySelector(".navBar");
+            window.onscroll = () =>{
+                //if this window screen scrolls beyond point Y=20 add sticky style otherwise remove sticky style
+                this.scrollY > 20 ?  navBar.classList.add("sticky") : navBar.classList.remove("sticky"); 	
+            }
+
+        </script>
+
+        <!-- PAYPAL script-->
+        <script>
+                function initPayPalButton() {
+                var shipping = 0;
+                var itemOptions = document.querySelector("#smart-button-container #item-options");
+            var quantity = parseInt();
+            var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+            if (!isNaN(quantity)) {
+                quantitySelect.style.visibility = "visible";
+            }
+            var orderDescription = '';
+            if(orderDescription === '') {
+                orderDescription = 'Item';
+            }
+            paypal.Buttons({
+                style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal',
+                
+                },
+                createOrder: function(data, actions) {
+                var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+                var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+                var tax = (7 === 0) ? 0 : (selectedItemPrice * (parseFloat(7)/100));
+                if(quantitySelect.options.length > 0) {
+                    quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+                } else {
+                    quantity = 1;
+                }
+
+                tax *= quantity;
+                tax = Math.round(tax * 100) / 100;
+                var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+                priceTotal = Math.round(priceTotal * 100) / 100;
+                var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+                return actions.order.create({
+                    purchase_units: [{
+                    description: orderDescription,
+                    amount: {
+                        currency_code: 'GBP',
+                        value: priceTotal,
+                        breakdown: {
+                        item_total: {
+                            currency_code: 'GBP',
+                            value: itemTotalValue,
+                        },
+                        shipping: {
+                            currency_code: 'GBP',
+                            value: shipping,
+                        },
+                        tax_total: {
+                            currency_code: 'GBP',
+                            value: tax,
+                        }
+                        }
+                    },
+                    items: [{
+                        name: selectedItemDescription,
+                        unit_amount: {
+                        currency_code: 'GBP',
+                        value: selectedItemPrice,
+                        },
+                        quantity: quantity
+                    }]
+                    }]
+                });
+                },
+                onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+                },
+                onError: function(err) {
+                console.log(err);
+                },
+            }).render('#paypal-button-container');
+            }
+            initPayPalButton();
+        </script>
+
+<!--------------------------------------------------------------------------------------------------
+----------------------------------- Shoping Cart and Product Js Script------------------------------
+------------------------------- Script needs to be here to avoid null error ------------------------
+----------------------------- It cannot be called before the object is loaded ----------------------
+--------------------------------------------------------------------------------------------------->
+       
+    <script src="./shoppingCart.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,328 @@
+<!-- Created by Esteban Araujo-Fervenza - x20170416
+                Jose Carlos Kuzolitz Garcia - x20164840
+                Samsom	Mihreteab - x  -->
+
+<!-- Indicates this is HTML5-->
+<!DOCTYPE html>
+
+<!-- Defines Language-->
+<html lang="en">
+
+    <head>
+        <!--Defines the char format-->
+        <meta charset="utf-8">
+
+        <!--Tab Title and icon-->
+        <title>Ludlow Homecare</title>
+        <link rel="icon" type="image/png" href="img/LudlowHCfavicon.jpg">
+        
+        <!-- Search Engine Optimisation -->
+		<meta name="description" content="This is a College Project. It's not the official website. You can access the official website on https://ludlowhomecare.co.uk/">
+		<meta name="author" content="This is a College Project. It's not the official website. You can access the official website on https://ludlowhomecare.co.uk/">
+
+        <!--Allow ViewPort Visualization, the scale of the website when it load up-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- enable page to be displayed in legacy browsers-->
+        <meta http-equiv="X-UA-Compative" content="ie=edge">
+
+        <!--Google API JQuery link-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Font Awesome Library --> 
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--Bootstrap link, script and stylesheet-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src= "./Ludlow_JS.js"></script>
+        <!-- css file link -->
+        <link href="groupCss.css" rel="stylesheet">
+        <link href="MobileView.css" rel="stylesheet">  
+
+    </head>
+
+
+    <!-- Body of the Website structure -->
+    <body>
+	
+		<!-- Menu: Adapted  from a youtube tutorial: https://www.youtube.com/watch?v=UHSeFxZIuv8&t=981s -->
+        <nav class="navBar">
+
+			<!-- Logo (Top Left)-->
+            <div class="content">
+                <div class="logo"><a href="./index.html"><img src="img/logo.png" alt="logo"></a></div>
+				
+						<!-- Search Bar setup -->
+						<div class="search">
+						<!-- Search bar is place into a form in order to process data and it is easier when styling -->
+						<form  action="/action_page.php">
+						<!-- Search Bar Input -->
+						<input type="text" placeholder="Search..." name="search">
+						<!-- Search Bar Button -->
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+
+
+				<!-- 3 Lines Button (It shows up just on Mobile View) -->
+				<div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+			
+                <div class= "menu-list" id="menu-list">
+				   
+					<!-- "x" Button (It shows up just on Mobile View) -->
+					<div class="icon off-btn"> 
+						<!--"X" icon (Font Awesome Library) --> 
+                        <i class="fas fa-times"></i>
+					</div>
+					
+					<!-- Menu Buttons -->
+                    <div class="menu-options">
+                        <a href="./index.html">Home</a>
+                        <p></p>
+                        <a href="./product.html">Products</a>
+						<p></p>
+						<!-- Trolly icon (Font Awesome Library) -->
+                        <a class="cart" href="./ShoppingCart.html">Shopping Cart <i class="fa fa-shopping-cart"></i><span>0</span></a>
+                        <p></p>
+                        <a href="./FAQ.html">FAQ</a>
+                        <p></p>
+                        <a href="./Contact.html">Contact</a>
+                    </div>	
+				</div>
+           
+			</div>
+        </nav>
+
+
+<!--------------------------------------------------------------------------------------------------
+----------------------------------------- Side Menu, Collapsible -----------------------------------
+--------------------------------------------------------------------------------------------------->
+	  
+<div id="plainHeader">
+
+
+    <!--https://www.w3schools.com/-->
+    <!-- menu Container -->
+    <div class="body-content-product">
+        <div class="cook-items"><!--Menu and dropdown container-->
+            <div class="category cookwares"><!--catagory container-->
+                <a href="#" class="cookware item_details">COOKWARE</a><!-- Menu name COOKWARE with dropdown Menu -->
+                <div class="dropdown-category "> <!--Dropdown container-->
+                    <a class="opt Show all" onclick="filterSelection('all')"> Show all</a><!--show all product drop down-->
+                    <a class="opt Casseroles & Dutch Ovens" onclick="filterSelection('Casseroles & Dutch Ovens')"> Casseroles & Dutch Ovens</a><!--show only Casseroles & Dutch Ovens type product-->
+                    <a class="opt Frying pans" onclick="filterSelection('Frying pans')"> Frying pans</a><!--show only Frying pans products-->
+                    <a class="opt Skillets & Griddles" onclick="filterSelection('Skillets & Griddles')"> Skillets & Griddles</a><!--show only Skillets & Griddles type products-->
+                    <a class="opt Roasting Pans & Dishes" onclick="filterSelection('Roasting Pans & Dishes')"> Roasting Pans & Dishes</a><!--show only Roasting Pans & Dishes type product-->
+                </div>
+            </div>
+            <div class="category kitchenwares"><!--catagory container-->
+                <a href="#" class="kitchenware item_details">KITCHENWARE</a><!-- Menu name KITCHENWARE with dropdown Menu -->
+                <div class="dropdown-category "><!--Dropdown container-->
+                    <a href="#" class="opt Aprons & Tea Towels" onclick="filterSelection('Aprons & Tea Towels')">Aprons & Tea Towels</a><!--show only this type product-->
+                    <a href="#" class="opt Brushes & Cleaning Tools" onclick="filterSelection('Brushes & Cleaning Tools')">Brushes & Cleaning Tools</a><!--show only this type product-->
+                    <a href="#" class="opt Frying pans" onclick="filterSelection('Frying pans')">Frying pans</a><!--show only this type product-->
+                    <a href="#" class="opt Strainers & Colanders" onclick="filterSelection('Strainers & Colanders')">Strainers & Colanders</a><!--show only this type product-->
+                    <a href="#" class="opt Spoons, Ladles, Spatulas & Whisks" onclick="filterSelection('Spoons, Ladles, Spatulas & Whisks')">Spoons, Ladles, Spatulas & Whisks</a><!--show only this type product-->
+                    <a href="#" class="opt Timers & Scales" onclick="filterSelection('Timers & Scales')">Timers & Scales</a>
+                </div>
+            </div>
+            <div class="category tablewares "><!--catagory container-->
+                <a class="tableware item_details">TABLEWARE</a><!-- Menu name cookware with dropdown Menu -->
+                <div class="dropdown-category "><!--Dropdown container-->
+                    <a href="#" class="opt Butter Knifes & Dishes" onclick="filterSelection('Butter Knifes & Dishes')">Butter Knifes & Dishes</a><!--show only this type product-->
+                    <a href="#" class="opt Coffee & Tea Accessories" onclick="filterSelection('Coffee & Tea Accessories')">Coffee & Tea Accessories</a><!--show only this type product-->
+                    <a href="#" class="opt DinnerWare" onclick="filterSelection('DinnerWare')">DinnerWare</a><!--show only this type product-->
+                    <a href="#" class="opt Salt & Pepper Mills" onclick="filterSelection('Salt & Pepper Mills')">Salt & Pepper Mills</a><!--show only this type product-->
+                    <a href="#" class="opt Serving Trays & Dishes" onclick="filterSelection('Serving Trays & Dishes')">Serving Trays & Dishes</a><!--show only this type product-->
+                </div>
+            </div>
+            <div class="category bakewares "><!--catagory container-->
+                <a class="bakeware item_details">BAKEWARE</a><!-- Menu name BAKEWARE with dropdown Menu -->
+                <div class="dropdown-category "><!--Dropdown container-->
+                    <a href="#" class="opt Baking Tools" onclick="filterSelection('Baking Tools')">Baking Tools</a><!--show only this type product-->
+                    <a href="#" class="opt Baking Trays" onclick="filterSelection('Baking Trays')">Baking Trays</a><!--show only this type product-->
+                    <a href="#" class="opt Cake Decorating" onclick="filterSelection('Cake Decorating')">Cake Decorating</a><!--show only this type product-->
+                    <a href="#" class="opt Loaf Tins" onclick="filterSelection('Loaf Tins')">Loaf Tins</a><!--show only this type product-->
+                    <a href="#" class="opt Rolling Rins & Mixing Bowls" onclick="filterSelection('Rolling Rins & Mixing Bowls')">Rolling Rins & Mixing Bowls</a><!--show only this type product-->
+                </div>
+            </div>
+            <div class="category knifes "><!--catagory container-->
+                <a class="knife item_details">KNIVES</a><!-- Menu name KNIVES with dropdown Menu -->
+                <div class="dropdown-category "><!--Dropdown container-->
+                    <a href="#" class="opt Bread Knifes" onclick="filterSelection('Bread Knifes')">Bread Knifes</a><!--show only this type product-->
+                    <a href="#" class="opt Carving Knifes" onclick="filterSelection('Carving Knifes')">Carving Knifes</a><!--show only this type product-->
+                    <a href="#" class="opt Cheese Knives" onclick="filterSelection('Cheese Knives')">Cheese Knives</a><!--show only this type product-->
+                    <a href="#" class="opt Cleavers" onclick="filterSelection('Cleavers')">Cleavers</a><!--show only this type product-->
+                    <a href="#" class="opt Steak Knives" onclick="filterSelection('Steak Knives')">Steak Knives</a><!--show only this type product-->
+                    <a href="#" class="opt Utility Knives" onclick="filterSelection('Utility Knives')">Utility Knives</a><!--show only this type product-->
+                    <a href="#" class="opt Knife Sets" onclick="filterSelection('Knife Sets')">Knife Sets</a><!--show only this type product-->
+                </div>
+            </div>
+        </div>
+        <!--https://www.w3schools.com/-->
+        <section class="product-item"><!--product section-->
+            <!--Casseroles & Dutch Ovens-->
+            <div class="product-container"><!--product container-->
+                <div class="filterDiv row  Casseroles & Dutch Ovens"><!--Casseroles & Dutch Ovens type product-->
+                    <div class="col-1"><!--single product detail-->
+                        <a href="img/LodgeDutchOven_580x.jpg"><img class="product_image" src="img/LodgeDutchOven_580x.png" alt="Lodge Dutc hOven"></a><!--single product image-->
+                        <p class="product_name" name="Lodge Cast Iron Lid & Loop Handle">Lodge Cast Iron</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£155.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row   Casseroles & Dutch Ovens"><!--type product-->
+                    <div class="col-1"><!--single product detail-->
+                        <a href="img/Dexam_ChausseurTagine_1024x1024.png"><img class="product_image" src="img/Dexam_ChausseurTagine_1024x1024.png" alt="Tagine"></a><!--single product image-->
+                        <p class="product_name" name="Tagine Red Cast Iron Base">Optimal Tagine Red </p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£45.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row  Casseroles & Dutch Ovens"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/MusselsPan.png"><img class="product_image" src="img/MusselsPan.png" alt="Mussels Pan"></a><!--single product image-->
+                        <p class="product_name" name="Ilsa Mussel Pot - Enameled Carbon Steel & Porcelain Lid">Ilsa Mussel Pot</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£25.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row Casseroles & Dutch Ovens"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/Le_Pentole_Casserole_with_Lid_24cm_Website_1024x1024.jpg"><img class="product_image" src="img/Le_Pentole_Casserole_with_Lid_24cm_Website_1024x1024.png" alt="Cassarole"></a><!--single product image-->
+                        <p class="product_name" name="De Buyer PrimAppety Stockpot">De Prim'Appety</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£165.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row Frying pans"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/Fryingpans2.png"><img class="product_image" src="img/Fryingpans2.png" alt="Fryingpan"></a><!--single product image-->
+                        <p class="product_name">De Buyer Non Stick Frypan - Copper</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£66.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row Frying pans"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/Fryingpans3.png"><img class="product_image" src="img/Fryingpans3.png" alt="Fryingpan"></a><!--single product image-->
+                        <p class="product_name">De Buyer Non Stick Frypan - Black</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£45.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row Frying pans"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/Fryingpans4.png"><img class="product_image" src="img/Fryingpans4.png" alt="Fryingpan"></a><!--single product image-->
+                        <p class="product_name">De Buyer Non Stick Frypan - Lid</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£54.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+                <div class="filterDiv row Frying pans"><!--type product-->
+                    <div class="col-1">
+                        <a href="img/Fryingpans6.jpg"><img class="product_image" src="img/Fryingpans6.png" alt="Fryingpan"></a><!--single product image-->
+                        <p class="product_name">De Buyer Non Stick Frypan - Grilled</p><!--Single product name-->
+                        <p class="shop-item-price"><span href="#" class="price">£55.00</span></p><!--Single product price-->
+                        <button class="add-cart btn btn-primary " type="button">ADD TO CART</button><!--Single product add to cart button-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>  
+<!--------------------------------------------------------------------------------------------
+--------------------------------------------- Footer -----------------------------------------
+---------------------------------------------------------------------------------------------->
+		
+		<div class="section-bottom-links">
+				
+			<div class="section-sub-bottom-links">
+				<div class="sub-section-bottom-links">
+					<div class="sub-bottom-links-title">
+							<!-- Contact Us Title -->
+							<p>
+								<span>Contact Us</span>
+							</p>
+							<!-- Contact Us Link (Placed into an Unorderd List) -->
+							<ul>
+								<li><a class = "find-us" href="./Contact.html">Find us here</a></li>
+								<li><p id="storeaddress">Ludford Bridge Ind Est, Temeside, Ludlow SY8 1PE, UK</p></li>
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section-sub-bottom-links">
+				<div class="sub-section-bottom-links">
+					<div class="sub-bottom-links-title">
+						<!-- Social Media Title -->
+						<p>
+							<span>Social Media</span>
+						</p>
+						<!-- Social Medias Links (Placed into an Unorderd List) -->
+						<ul>
+							<li><a href="https://www.facebook.com/LHomecareLtd/" class="fa fa-facebook"></a></li>
+							<li><a href="https://www.linkedin.com/company/ludlow-homecare-limited/about/" class="fa fa-linkedin"></a></li>
+							<li><a href="https://twitter.com/LudlowHomecare" class="fa fa-twitter"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section-sub-bottom-links">
+				<div class="sub-section-bottom-links">
+					<div class="sub-bottom-links-title">
+						<!-- Our Blogs Title -->
+						<p>
+							<span>Our Blogs</span>
+						</p>
+						<!-- Our Blogs Links (Placed into an Unorderd List) -->
+						<ul>
+							<li><a class="blog blog-tips" href="#">Tips & Advice</a></li>
+							<li><a class="blog blog-insp" href="#">Inspiration</a></li>
+							<li><a class="blog blog-calc" href="#">Calculators</a></li>
+							<li><a class="blog blog-shopB" href="#">Shop Brands</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>   
+		</div>
+		
+		<footer class="footer">
+		<!-- Copyright and W3C validation -->
+		<!--W3 Validator gave us this badge when it found no errors in our CSS code for this page-->
+		<p>Copyright &copy; Ludlow Homecare &nbsp; <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="Valid CSS!" />
+				</a>
+		</p>
+		</footer>
+
+<!--------------------------------------------------------------------------------------------------
+---------------------------------------- Top NavBar Menu Script ------------------------------------
+--Script needs to be here to avoid null error. Code  from tutorial: https://youtu.be/UHSeFxZIuv8.--- 
+----------------------------- It cannot be called before the object is loaded ----------------------
+--------------------------------------------------------------------------------------------------->
+		
+        <script>	
+            const navBar = document.querySelector(".navBar");
+            window.onscroll = () =>{
+                //if this window screen scrolls beyond point Y=20 add sticky style otherwise remove sticky style
+                this.scrollY > 20 ?  navBar.classList.add("sticky") : navBar.classList.remove("sticky"); 	
+            }
+        </script>
+
+<!--------------------------------------------------------------------------------------------------
+----------------------------------- Shoping Cart and Product Js Script------------------------------
+------------------------------- Script needs to be here to avoid null error ------------------------
+----------------------------- It cannot be called before the object is loaded ----------------------
+--------------------------------------------------------------------------------------------------->
+       
+        <script src="./product.js"></script>
+        <script src="./shoppingCart.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,706 @@
+/* MOBILE VERSION */
+
+
+/*Responsive, partially adapted from tutorial: https://www.youtube.com/watch?v=UHSeFxZIuv8&t=981s   ==============================================================================================================================================================*/
+
+
+/* Max-Width has been sent as 1305px because is the Menu Buttons Limit before it splits apart */
+
+@media screen and (max-width: 1305px) {
+    /*Navigation menu (it sticks to the top of the screen at all times) */
+    .navBar {
+        position: fixed;
+        /*Established the element in a fixed position*/
+        background-color: rgba(255, 255, 255, 0.7);
+        /* Background Colour */
+        z-index: 5;
+        /*displays the element on top of any other box that ocupies the same "line" on the screen*/
+        width: 100%;
+        /* Sets the default Width */
+        padding: 0 0;
+        /* Sets Padding */
+        transition: all 0.3s ease;
+        /* Slow down the animation of the menu when scrolling the screen */
+    }
+    /*Content Container, which has the Logo, Menu Buttons and Search Bar*/
+    .navBar .logo img {
+        position: relative;
+        /* Sets the images to a relative position */
+        margin-left: -10%;
+        /* Set Margin-left to 10%*/
+        width: 35%;
+        /* Width size */
+        height: 35%;
+        /* Height size */
+    }
+    /* 3 Lines Button (Top right) */
+    .icon {
+        position: absolute;
+        /* Sets the 3 lines button to accept an absolute position */
+        display: block;
+        /* It displays as a block */
+        color: rgb(5, 119, 61);
+        /* Font Colour */
+        font-size: 30px;
+        /* Size */
+        margin-left: 80%;
+        /* Sets the margin-left */
+    }
+    .icon.hide {
+        display: none;
+        /* It does not display when gets the ".hide" in the class */
+    }
+    /*Search Bar and Button Container positioning and sizening*/
+    .search {
+        position: absolute;
+        /* Sets the container to accepts to be placed at an Absolute position */
+        text-align: right;
+        /* Align the items on the Right */
+        margin-top: 0%;
+        /* Margin Top Setup */
+        margin-left: 0%;
+        /* Margin Left Setup */
+        width: 70%;
+        /* Sets width of the Container */
+    }
+    /*Search Input styling */
+    .search input {
+        border: none;
+        /* Gets rid with the default border */
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        border-bottom: 1px solid rgb(5, 119, 61);
+        /* Sets a green bottom border */
+        font-size: 15px;
+        /* Sets the font size */
+    }
+    /* Search Button Styling */
+    .search button {
+        font-size: 20px;
+        /* Sets the Icon Size*/
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        color: rgb(5, 119, 61);
+        /* Colour of the icon */
+        border: none/* Gets rid with the default border */
+    }
+    .navBar .menu-list {
+        position: fixed;
+        top: 7%;
+        /*aligns  menu  with the top left corner of the screen*/
+        left: -90%;
+        /*hides the  box off-screen*/
+        height: 100vh;
+        width: 90%;
+        max-width: 400px;
+        /*max widht of the "shrunk" menu's screen*/
+        background: rgba(255, 255, 255, 0.9);
+        display: block;
+        /*menu elements show one above the other instean on the same line*/
+        padding: 40px 0;
+        /*spacing between the elements of the lmenu_ist an the navBar box*/
+        text-align: center;
+        z-index: 2;
+        /*displays above all other elements*/
+        transition: all 0.3s ease;
+        /*creates delay between the js instruction and the display modification*/
+    }
+    .navBar .menu-list.active {
+        left: 0%;
+    }
+    .menu-list p {
+        display: block;
+        /*displays all the elements of the list one next to the other in the same line*/
+        margin-top: 5%;
+        padding-bottom: 10%;
+    }
+    .navBar .menu-list a {
+        margin-top: 45px;
+        /*spacing between the elements in the menu_list*/
+        font-size: 24px;
+    }
+    /*Background Image and box styling behind the carousel*/
+    .header {
+        height: 100vh;
+        /*stablishes the height of the the box*/
+        background: url("img/storeFront.jpg") no-repeat;
+        /*places image of store front as a background*/
+        background-size: cover;
+        /*image stretches to cover the entirety of the 'header' box*/
+        background-position: center;
+        background-attachment: fixed;
+        /*keeps picture in place allowing other elements to slide over it*/
+        position: relative;
+
+    }
+	.carousel{margin:auto; margin-top:10%;}
+    /*Carousel mobile*/
+    .carousel-inner {
+        margin-top: 10%;
+    }
+    .item {
+		margin: auto;
+       padding-left: 0%;
+	   position: relative;
+    }
+    .item img {
+        width: 75%;
+        padding: 0;
+    }
+	.item .carousel-caption{
+		position:absolute;
+		left: 14%;
+		right:14%;
+		margin: auto;
+		width: 75%;
+		height: 75%;
+	}
+
+
+    /*About Text=======================================================================================================================================================================================================================================*/
+    .reviews {
+        padding-top: 50px;
+        /*creates a separation this box from the one before it*/
+        overflow: hidden;
+        margin: 0.5%;
+    }
+    .reviews .about {
+        font-size: 35px;
+        font-weight: 700;
+        color: rgb(5, 119, 61);
+    }
+    .reviews a {
+        font-weight: bold;
+        color: rgb(5, 119, 61);
+    }
+    .reviews p {
+        padding-top: 20px;
+        /*separation between paragraphs inside this box*/
+        text-align: justify;
+        /*justifies text */
+        font-size: 1.3em;
+    }
+    /*Aligns  goolge review box*/
+    .snipets {
+        padding-top: 5%;
+        margin: 1%;
+        display: block;
+        text-align: center;
+    }
+    .snipets ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    /*Google Map============================================================================================================================================================================================================================================*/
+    .map-index {
+        padding-top: 5%;
+        width: 100%;
+        text-align: center;
+        margin: 0.5%;
+    }
+    .map-index iframe {
+        width: 400px;
+        height: 300px;
+        border: 1px solid rgb(5, 119, 61);
+    }
+    .map-index h3 {
+        font-size: 200%;
+        color: rgb(5, 119, 61);
+        font-weight: 700;
+    }
+    /*Footer*/
+    .section-bottom-links {
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+        display: flex;
+        align-items: baseline;
+        /*Aligns the elements (logo, menu list and SearchBar) in the centre of the page(horizontally and vertically), one next to the other in the same line*/
+        justify-content: space-evenly;
+        /* justifies the elements. So the items are at both extremes of the page */
+    }
+    .section-sub-bottom-links {
+        margin-top: 3%;
+        margin-bottom: 1%;
+        width: 50%;
+    }
+    .sub-bottom-links-title li {
+        padding: 2px;
+    }
+    .find-us {
+        width: 100%;
+    }
+    #storeaddress {
+        height: 100%;
+        align-items: center;
+    }
+    /*Facebook*/
+    .fa {
+        margin: auto;
+    }
+    /*jose carlos=FAQ============================================================*/
+    #plainHeader {
+        height: 100%;
+    }
+    .body-content {
+        height: 100%;
+    }
+    .faq-logo {
+        height: 80px;
+        width: 80px;
+    }
+    .side-content {
+        display: none;
+    }
+    .main-content {
+        height: 50%;
+        width: 90%;
+        border: none;
+    }
+    /*Jose Carlos= Contact=========================================================*/
+   
+    .body-content-div {
+        background-color: whitesmoke;
+        text-align: center;
+        display: block;
+        width: 95%;
+    }
+    .body-content-div-form {
+        margin: auto;
+        width: 100%;
+    }
+    .body-content-div-from-table {
+        margin: auto;
+    }
+    .body-content-div-from-table input,
+    textarea {
+        font-size: 11px;
+        border: 1px solid rgba(169, 169, 169, 0.7);
+    }
+    .contactDetails {
+        margin-top: 15%;
+        margin-left: 15%;
+        padding-bottom: 15%;
+        width: 90%;
+        text-align: center;
+        background-color: whitesmoke;
+    }
+    /*Samsom= Products=============================================================================================================================================================*/
+    /*style cook items menu*/
+    .cook-items {
+        display: block;
+        height: 25vh;
+        text-align: left;
+        position: relative;
+        padding: 2%;
+        width: 100%;
+        margin: 0;
+        background-color:whitesmoke;
+    }
+	/*Used to differentiate which option has been highlighted*/
+    .cook-items a {
+       color:  rgb(5,119,61);
+    }
+	.cook-items a:hover{
+		color:darkorange;
+	}
+    /**/
+    .category {
+        margin: auto;
+    }
+    /*filter menu, no functionality implemented*/
+    .dropdown-category {
+        top: 2%;
+        right: 2%;
+        left: 46%;
+        width: 40%;
+        z-index: 1;
+    }
+    /*styles the filter menu items*/
+    .dropdown-category a.opt {
+        margin: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /*styles the filter menu items*/
+    .product-container {
+        overflow: hidden;
+        padding: 22px;
+        width: 80%;
+        margin: auto;
+    }
+    .filterDiv {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        padding-top: 5%;
+    }
+    .filterDiv p.product_name {
+        margin: auto;
+        text-align: center;
+    }
+    .filterDiv img {
+        width: 50%;
+    }
+    /*Shopping Cart*============================================================================================*/
+    .checkout-row {
+		display: block;
+    }
+	/*Esteban: scrolls this div only when the screen is small*/
+	.Checkout-container{
+		overflow-x:hidden;
+		overflow-y:auto;
+	}
+    .checkout-detail {
+		display: block;
+		height: 100%;
+		margin:auto;
+    }
+	/*Adds a little space at the bottom of the last element of the scrollable div (see line 346)*/
+	.detail.cardNumber{
+		padding-bottom: 5px;
+	}
+    .cart-holder {
+        margin: auto;
+        margin-top: 5%;
+        width: 100%;
+		 height:100%;
+        display: block;
+    }
+	
+}
+
+@media screen and (max-width: 1024px) {
+    /*Navigation menu (it sticks to the top of the screen at all times) */
+    .navBar {
+        position: fixed;
+        /*Established the element in a fixed position*/
+        background-color: rgba(255, 255, 255, 0.7);
+        /* Background Colour */
+        z-index: 5;
+        /*displays the element on top of any other box that ocupies the same "line" on the screen*/
+        width: 100%;
+        /* Sets the default Width */
+        padding: 0 0;
+        /* Sets Padding */
+        transition: all 0.3s ease;
+        /* Slow down the animation of the menu when scrolling the screen */
+    }
+    /*Content Container, which has the Logo, Menu Buttons and Search Bar*/
+    .navBar .logo img {
+        position: relative;
+        /* Sets the images to a relative position */
+        margin-left: -10%;
+        /* Set Margin-left to 10%*/
+        width: 35%;
+        /* Width size */
+        height: 35%;
+        /* Height size */
+    }
+    /* 3 Lines Button (Top right) */
+    .icon {
+        position: absolute;
+        /* Sets the 3 lines button to accept an absolute position */
+        display: block;
+        /* It displays as a block */
+        color: rgb(5, 119, 61);
+        /* Font Colour */
+        font-size: 30px;
+        /* Size */
+        margin-left: 80%;
+        /* Sets the margin-left */
+    }
+    .icon.hide {
+        display: none;
+        /* It does not display when gets the ".hide" in the class */
+    }
+    /*Search Bar and Button Container positioning and sizening*/
+    .search {
+        position: absolute;
+        /* Sets the container to accepts to be placed at an Absolute position */
+        text-align: right;
+        /* Align the items on the Right */
+        margin-top: 0%;
+        /* Margin Top Setup */
+        margin-left: 6%;
+        /* Margin Left Setup */
+        width: 70%;
+        /* Sets width of the Container */
+    }
+    /*Search Input styling */
+    .search input {
+        border: none;
+        /* Gets rid with the default border */
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        border-bottom: 1px solid rgb(5, 119, 61);
+        /* Sets a green bottom border */
+        font-size: 12px;
+        /* Sets the font size */
+    }
+    /* Search Button Styling */
+    .search button {
+        margin: -5%;
+        font-size: 20px;
+        /* Sets the Icon Size*/
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        color: rgb(5, 119, 61);
+        /* Colour of the icon */
+        border: none/* Gets rid with the default border */
+    }
+    .navBar .menu-list {
+        position: fixed;
+        top: 7%;
+        /*aligns  menu  with the top left corner of the screen*/
+        left: -90%;
+        /*hides the  box off-screen*/
+        height: 100vh;
+        width: 90%;
+        max-width: 400px;
+        /*max widht of the "shrunk" menu's screen*/
+        background: rgba(255, 255, 255, 0.9);
+        display: block;
+        /*menu elements show one above the other instean on the same line*/
+        padding: 40px 0;
+        /*spacing between the elements of the lmenu_ist an the navBar box*/
+        text-align: center;
+        z-index: 2;
+        /*displays above all other elements*/
+        transition: all 0.3s ease;
+        /*creates delay between the js instruction and the display modification*/
+    }
+    .navBar .menu-list.active {
+        left: 0%;
+    }
+    .menu-list p {
+        display: block;
+        /*displays all the elements of the list one next to the other in the same line*/
+        margin-top: 5%;
+        padding-bottom: 10%;
+    }
+    .navBar .menu-list a {
+        margin-top: 45px;
+        /*spacing between the elements in the menu_list*/
+        font-size: 24px;
+    }
+    /*Background Image and box styling behind the carousel*/
+    .header {
+        height: 150vh;
+        /*stablishes the height of the the box*/
+        background: url("img/storeFront.jpg") no-repeat;
+        /*places image of store front as a background*/
+        background-size: cover;
+        /*image stretches to cover the entirety of the 'header' box*/
+        background-position: center;
+        background-attachment: fixed;
+        /*keeps picture in place allowing other elements to slide over it*/
+        position: relative;
+    }
+    /* Carousel Positioning */
+    .carousel-inner {
+        margin-top: -15%;
+    }
+    .item {
+		padding-left: 0%;
+		position: relative;
+    }
+    .item img {
+        width: 100%;
+        min-width: 200px;
+        padding: 0;
+    }
+	.item.carousel-caption{
+		position: absolute;
+		left: 0;
+		right:10%;
+	}
+	.item .carousel-caption p{
+		font-size: 0.8em;
+
+	}
+	.item .carousel-caption h3{
+		font-size: 1.2em;
+	}
+
+    /*Review images*/
+    .snipets ul {
+        display: block;
+    }
+    /*Video mobile*/
+    .video-player {
+        float: none;
+        width: 100%;
+        margin: auto;
+    }
+    .map-index iframe {
+        margin: auto;
+        width: 90%;
+    }
+    .sub-bottom-links-title ul {
+        display: block;
+    }
+    .blog {
+		padding: 10px;
+		font-size: 0.8em;
+		height: 50%;
+		display: inline-table;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+	/*shopping  Cart product display correction*/
+	.pQuantity{
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 300px) {
+    /*Navigation menu (it sticks to the top of the screen at all times) */
+    .navBar {
+        position: fixed;
+        /*Established the element in a fixed position*/
+        background-color: rgba(255, 255, 255, 0.7);
+        /* Background Colour */
+        z-index: 5;
+        /*displays the element on top of any other box that ocupies the same "line" on the screen*/
+        width: 100%;
+        /* Sets the default Width */
+        padding: 0 0;
+        /* Sets Padding */
+        transition: all 0.3s ease;
+        /* Slow down the animation of the menu when scrolling the screen */
+    }
+    /*Content Container, which has the Logo, Menu Buttons and Search Bar*/
+    .navBar .logo img {
+        position: relative;
+        /* Sets the images to a relative position */
+        margin-left: -10%;
+        /* Set Margin-left to 10%*/
+        width: 35%;
+        /* Width size */
+        height: 35%;
+        /* Height size */
+    }
+    /* 3 Lines Button (Top right) */
+    .icon {
+        position: absolute;
+        /* Sets the 3 lines button to accept an absolute position */
+        display: block;
+        /* It displays as a block */
+        color: rgb(5, 119, 61);
+        /* Font Colour */
+        font-size: 30px;
+        /* Size */
+        margin-left: 80%;
+        /* Sets the margin-left */
+    }
+    .icon.hide {
+        display: none;
+        /* It does not display when gets the ".hide" in the class */
+    }
+    /*Search Bar and Button Container positioning and sizening*/
+    .search {
+        position: absolute;
+        /* Sets the container to accepts to be placed at an Absolute position */
+        text-align: right;
+        /* Align the items on the Right */
+        margin-top: 0%;
+        /* Margin Top Setup */
+        margin-left: 6%;
+        /* Margin Left Setup */
+        width: 70%;
+        /* Sets width of the Container */
+    }
+    /*Search Input styling */
+    .search input {
+        border: none;
+        /* Gets rid with the default border */
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        border-bottom: 1px solid rgb(5, 119, 61);
+        /* Sets a green bottom border */
+        font-size: 8px;
+        /* Sets the font size */
+    }
+    /* Search Button Styling */
+    .search button {
+        margin: -5%;
+        font-size: 20px;
+        /* Sets the Icon Size*/
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Sets the background colour */
+        color: rgb(5, 119, 61);
+        /* Colour of the icon */
+        border: none/* Gets rid with the default border */
+    }
+    .navBar .menu-list {
+        position: fixed;
+        top: 7%;
+        /*aligns  menu  with the top left corner of the screen*/
+        left: -90%;
+        /*hides the  box off-screen*/
+        height: 100vh;
+        width: 90%;
+        max-width: 400px;
+        /*max widht of the "shrunk" menu's screen*/
+        background: rgba(255, 255, 255, 0.9);
+        display: block;
+        /*menu elements show one above the other instean on the same line*/
+        padding: 40px 0;
+        /*spacing between the elements of the lmenu_ist an the navBar box*/
+        text-align: center;
+        z-index: 2;
+        /*displays above all other elements*/
+        transition: all 0.3s ease;
+        /*creates delay between the js instruction and the display modification*/
+    }
+    .navBar .menu-list.active {
+        left: 0%;
+    }
+    .menu-list p {
+        display: block;
+        /*displays all the elements of the list one next to the other in the same line*/
+        margin-top: 5%;
+        padding-bottom: 10%;
+    }
+    .navBar .menu-list a {
+        margin-top: 45px;
+        /*spacing between the elements in the menu_list*/
+        font-size: 24px;
+    }
+    .item {
+        padding-left: 0%;
+    }
+    .item img {
+        width: 100%;
+        padding: 0;
+    }
+    /*Review images*/
+    .snipets ul {
+        display: block;
+    }
+    /*Video mobile*/
+    .video-player {
+        float: none;
+        width: 100%;
+        margin: auto;
+    }
+    .map-index iframe {
+        margin: auto;
+        width: 90%;
+    }
+    .sub-bottom-links-title ul {
+        display: block;
+    }
+    .blog {
+        padding: 10px;
+        font-size: 0.8em;
+        height: 50%;
+    }
+	
+}
